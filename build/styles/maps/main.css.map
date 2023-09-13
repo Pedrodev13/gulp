@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss","constantes.scss"],"names":[],"mappings":"AAEA,KACI,iBCHS","file":"../main.css","sourcesContent":["@use 'constantes';\r\n\r\nbody {\r\n    background-color: constantes.$corDeFundo ;\r\n}","$corDeFundo: rgb(47, 194, 106);"]}
