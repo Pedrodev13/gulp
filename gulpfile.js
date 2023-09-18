@@ -5,7 +5,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 
 function comprimeImagens(){
-    return gulp.src('.source/images/*')
+    return gulp.src('./source/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./build/images'));
 }
@@ -28,9 +28,8 @@ function compilandoSass() {
 }
 
 exports.sass = compilandoSass;
-exports.watch = function(){
+exports.default = function(){
     gulp.watch('./source/styles/*.scss', {ignoreInitial: false}, gulp.series(compilandoSass));
+    gulp.watch('./source/sripts/*.js', {ignoreInitial: false}, gulp.series(comprimindoJS));
+    gulp.watch('./source/images/', {ignoreInitial: false}, gulp.series(comprimeImagens));
 }
-
-exports.javascript = comprimindoJS;
-exports.images = comprimeImagens;
